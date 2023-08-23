@@ -11,27 +11,22 @@ import 'package:online_shop/views/ui/searchpage.dart';
 import 'package:provider/provider.dart';
 
 class MainScreen extends StatelessWidget {
-  MainScreen({super.key});
-
-  List<Widget> pageList =  [
-    const HomePage(),
-    const SearchPage(),
-    const HomePage(),
+  List<Widget> pageList = [
+    HomePage(),
+    SearchPage(),
+    HomePage(),
     CartPage(),
-    const ProfilePage()
+    ProfilePage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Consumer<MainScreenNotifier>(
-      builder: (context, mainScreenNotifier, child) {
-        return Scaffold(
+        builder: (context, mainScreenNotifier, child) {
+      return Scaffold(
           backgroundColor: const Color(0xFFE2E2E2),
-
           body: pageList[mainScreenNotifier.pageIndex],
-          bottomNavigationBar: const BottoNavBar(),
-        );
-      },
-    );
+          bottomNavigationBar: const BottoNavBar());
+    });
   }
 }
