@@ -32,7 +32,7 @@ class _ProductCardState extends State<ProductCard> {
         borderRadius: const BorderRadius.all(Radius.circular(16)),
         child: Container(
           height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width * 0.6,
+          width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(boxShadow: [
             BoxShadow(
                 color: Colors.white,
@@ -97,10 +97,11 @@ class _ProductCardState extends State<ProductCard> {
                         const SizedBox(
                           width: 5,
                         ),
-                        ChoiceChip(label: const Text(" "), 
-                        selected: selected,
-                        visualDensity: VisualDensity.compact,
-                        selectedColor: Colors.black,
+                        ChoiceChip(
+                          label: const Text(" "),
+                          selected: selected,
+                          visualDensity: VisualDensity.compact,
+                          selectedColor: Colors.black,
                         )
                       ],
                     )
